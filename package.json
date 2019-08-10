@@ -1,7 +1,7 @@
 {
   "name": "test.iconzoom",
   "author": "José Miguel Sánchez Alés <sio2sio2+github@gmail.com>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "docs/main.bundle.js",
   "scripts": {
     "build": "webpack --env.output=min",
@@ -44,12 +44,10 @@
     "@babel/preset-env": "^7.5.5",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
-    "core-js": "^3.2.0",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "leaflet": "^1.5.1",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
@@ -61,6 +59,8 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "leaflet.iconzoom": "git+https://github.com/sio2sio2/leaflet.iconzoom.git"
+    "leaflet.iconzoom": "git+https://github.com/sio2sio2/leaflet.iconzoom.git",
+    "leaflet": "^1.5.1",
+    "core-js": "^3.2.0"
   }
 }
