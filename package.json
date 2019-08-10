@@ -1,7 +1,7 @@
 {
   "name": "test.iconzoom",
   "author": "José Miguel Sánchez Alés <sio2sio2+github@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "docs/main.bundle.js",
   "scripts": {
     "build": "webpack --env.output=min",
@@ -44,20 +44,20 @@
     "@babel/preset-env": "^7.5.5",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
-    "core-js": "^3.1.4",
+    "core-js": "^3.2.0",
     "css-loader": "^3.2.0",
-    "file-loader": "^4.1.0",
+    "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "leaflet": "^1.5.1",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^7.2.0",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2",
+    "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
