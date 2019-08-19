@@ -1,9 +1,14 @@
 import L from "leaflet";
+import "leaflet-defaulticon-compatibility";
+
 import "leaflet.iconzoom";
 
 import "leaflet/dist/leaflet.css";
-import "app/src/sass/index.sass";
-import "app/src/images/logo.svg";
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+
+import "app/src/index.sass";
+import logo from "app/src/logo.svg";
+
 
 const Icon = L.DivIcon.extend({
    options: {
@@ -48,7 +53,7 @@ window.onload = function() {
    const Watermark = L.Control.extend({
       onAdd: function(map) {
          const img = L.DomUtil.create("img");
-         img.src = "images/logo.svg"
+         img.src = logo;
          img.style.width = "200px";
 
          return img

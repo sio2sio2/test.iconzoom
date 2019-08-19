@@ -32,29 +32,12 @@ function confBabel(env) {
 
 
 // Configuración para desarrollo
-// (los mapeos de código fuente en fichero aparte)
 function confDev(filename) {
    return {
       devtool: false,
       devServer: {
          contentBase: false,
          open: "chromium",
-      },
-      module: {
-         rules: [
-            {
-               test: /\.(css|sass)$/,
-               use: [MiniCssExtractPlugin.loader,
-                     "css-loader?sourceMap=true",
-                     { 
-                        loader: "postcss-loader",
-                        options: {
-                           plugins: () => [require("autoprefixer")]
-                        }
-                     },
-                     "sass-loader"]
-            }
-         ]
       },
       plugins: [
          new webpack.SourceMapDevToolPlugin({
@@ -67,7 +50,6 @@ function confDev(filename) {
 
 module.exports = env => {
    let mode;
-
    switch(env.output) {
       case "debug":
          mode = "development";
@@ -76,11 +58,11 @@ module.exports = env => {
          mode = "production";
    }
 
-   const filename = "js/[name].bundle.js";
+   const filename = "js/[name].js";
    const common = {
       mode: mode,
       entry: {
-         [name]: ["./src/js/index.js"]
+         [name]: "./src/index.js"
       },
       output: {
          path: path.resolve(__dirname, "docs"),
@@ -95,22 +77,22 @@ module.exports = env => {
          rules: [
             {
                test: /\.html$/,
-               use: {
-                  loader: "html-loader",
-                  options: { minimize: true }
-               }
+               use: ["html-loader?minimize=true"]
             },
             {
                test: /\.(css|sass)$/,
                use: [MiniCssExtractPlugin.loader,
-                     "css-loader",
+                     `css-loader?sourceMap=${mode === "development"}`,
                      { 
-                        loader: "postcss-loader",
+                        loader: `postcss-loader?sourceMap=${mode === "development"}`,
                         options: {
-                           plugins: () => [require("autoprefixer")]
+                           plugins: () => [
+                              require("autoprefixer"),
+                              require("cssnano")
+                           ]
                         }
                      },
-                     "sass-loader"]
+                     `sass-loader?sourceMap=${mode === "development"}`]
             },
             {
                test: /\.(png|jpe?g|gif|svg)$/i,
