@@ -103,9 +103,6 @@ module.exports = env => {
          ]
       },
       plugins: [
-         new webpack.ProvidePlugin({
-            L: "leaflet"
-         }),
          new HtmlWebPackPlugin({
             template: "src/index.html",
          }),
