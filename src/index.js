@@ -3,9 +3,6 @@ import "leaflet-defaulticon-compatibility";
 
 import "leaflet.iconzoom";
 
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
-
 import "app/src/index.sass";
 import logo from "app/src/logo.svg";
 
